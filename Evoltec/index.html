@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evoltec</title>
+    <link rel="stylesheet" href="../Evoltec/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+body {
+    font-family: "Cairo", sans-serif;
+    height: 100vh;
+    width: 100%;
+}
+header{
+    background:url(siteImg/pexels-pixabay-269077.jpg);
+}
+        </style>
+</head>
+<body>
+
+    <!-- Header Start -->
+    <header>
+        <div id="navbar">
+            <img src="../Evoltec/siteImg/lo-removebg-preview (1).png" alt="Evoltec Logo">
+            <nav>
+                <ul>
+                    <li><a href="#home" data-i18n="accueil">Accueil</a></li>
+                    <li><a href="#about" data-i18n="aPropos">A propos</a></li>
+                    <li><a href="#services" data-i18n="services">Service</a></li>
+                    <li><a href="#contact" data-i18n="contact">Contact</a></li>
+                    <li><a href="../login.php" data-i18n="connexion">Connection</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content"> 
+            <h1 style="font-size: 50px;"><span data-i18n="bienvenue">BIENVENUE CHEZ LA SOCIETE</span> <span class="para">EVOLTEC</span></h1>
+            <p style="font-size: 25px;" data-i18n="slogan">Votre parttenaire de confiance en informatique, télécommnications et transformation numérique</p>
+            <!-- <a href="#contact" class="btn btn-primary" data-i18n="reserver">RESERVER UN SERVICE</a> -->
+        </div>
+    </header>
+
+    <section id="about" style="padding: 60px 20px; background-color: #f9f9f9; color: #333;">
+        <div style="max-width: 1000px; margin: auto;">
+            <h2 style="font-size: 32px; margin-bottom: 20px;" data-i18n="titreApropos">À propos d'EVOLTEC</h2>
+            <p data-i18n="descriptionApropos">
+                <strong>EVOLution TEChnology (EVOLTEC)</strong> est une entreprise marocaine basée à Marrakech, spécialisée dans
+                l'informatique, les télécommunications et le mobilier de bureau. Depuis sa création en 2006, EVOLTEC
+                accompagne ses clients dans leur transformation numérique grâce à une expertise reconnue.
+            </p>
+            <br>
+            <p>
+                <strong data-i18n="domaines">Nos domaines d'intervention :</strong>
+                <ul style="margin-top: 10px; padding-left: 20px;">
+                    <li data-i18n="audit">✔ Audit et diagnostic</li>
+                    <li data-i18n="assistance">✔ Assistance et conseil</li>
+                    <li data-i18n="maintenance">✔ Maintenance, entretien et réparation</li>
+                    <li data-i18n="informatique">✔ Informatisation et numérisation</li>
+                    <li data-i18n="pedagogique">✔ Solutions pédagogiques</li>
+                </ul>
+            </p>
+            <br>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div class="services-container">
+            <h2 data-i18n="nosServices">Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <h3 data-i18n="informatiqueTitre">Informatique</h3>
+                    <p data-i18n="informatiqueDesc">Solutions IT, développement logiciel, maintenance de parc informatique.</p>
+                </div>
+                <div class="service-box">
+                    <h3 data-i18n="bureautiqueTitre">Bureautique</h3>
+                    <p data-i18n="bureautiqueDesc">Vente et maintenance d'équipements bureautiques, numérisation de documents.</p>
+                </div>
+                <div class="service-box">
+                    <h3 data-i18n="telecomTitre">Télécommunication</h3>
+                    <p data-i18n="telecomDesc">Installation réseaux, câblage, téléphonie IP, solutions de communication unifiée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div>
+                        <h3 data-i18n="adresse">ADDRESS</h3>
+                        <p><i class="fa-solid fa-location-dot"></i>196, Quartier ELBAHJA, Rue HASSANI ELWAZZANI Marrakech, Marrakech-Safi 40130,Maroc</p>
+                        <p><i class="fa-solid fa-phone"></i> Telephone: +212 6 12 34 56 78</p>
+                        <p><i class="fa-regular fa-envelope"></i>evoltec@gmail.com</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="horaires">HEURES DE TRAVAIL</h3>
+                        <p data-i18n="semaine">De 8h00 à 23h11 en semaine</p>
+                        <p data-i18n="weekend">De 11h00 à 1h00 le week-end</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="suivezNous">SUIVEZ-NOUS</h3>
+                        <a href="https://www.facebook.com/evotec.ma/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.evoltec.ma/"><i class="fas fa-globe"></i></a>
+                        <a href="https://www.instagram.com/evoltec.ma?igsh=ZnBnOGhjMTdidTR1"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.1676626396365!2d-8.046834931214194!3d31.63415981762435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafe94b47ee88bb%3A0x66b21dbeaf1304e4!2sEVOTEC!5e0!3m2!1sar!2sma!4v1748272655055!5m2!1sar!2sma" 
+                    width="1200" 
+                    height="550" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+     <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <div style="text-align: right; position: fixed; top: 600px; right: 20px; z-index: 1000;">
+    <button id="lang-toggle" onclick="toggleLanguage()" style="padding: 10px 16px; background: #3fb5ec; color: white; border: none;border-radius: 7px; cursor: pointer; ">Français / English</button>
+</div>
+    <footer class="footer">
+        <div class="footer-mip">
+            <p>© 2025 <span class="highlight">EVOLTEC</span>. <span data-i18n="droits">Tous droits réservés.</span></p>
+        </div>
+    </footer>
+
+   
+
+    <script>
+        const translations = {
+            fr: {
+                title: "Evoltec",
+                accueil: "Accueil",
+                aPropos: "À propos",
+                services: "Service",
+                contact: "Contact",
+                connexion: "Connection",
+                bienvenue: "BIENVENUE CHEZ LA SOCIETE",
+                slogan: "Votre parttenaire de confiance en informatique, télécommnications et transformation numérique",
+                reserver: "RESERVER UN SERVICE",
+                titreApropos: "À propos d'EVOLTEC",
+                descriptionApropos: "EVOLution TEChnology (EVOLTEC) est une entreprise marocaine basée à Marrakech, spécialisée dans l'informatique, les télécommunications et le mobilier de bureau. Depuis sa création en 2006, EVOLTEC accompagne ses clients dans leur transformation numérique grâce à une expertise reconnue.",
+                domaines: "Nos domaines d'intervention :",
+                audit: "✔ Audit et diagnostic",
+                assistance: "✔ Assistance et conseil",
+                maintenance: "✔ Maintenance, entretien et réparation",
+                informatique: "✔ Informatisation et numérisation",
+                pedagogique: "✔ Solutions pédagogiques",
+                nosServices: "Nos Services",
+                informatiqueTitre: "Informatique",
+                informatiqueDesc: "Solutions IT, développement logiciel, maintenance de parc informatique.",
+                bureautiqueTitre: "Bureautique",
+                bureautiqueDesc: "Vente et maintenance d'équipements bureautiques, numérisation de documents.",
+                telecomTitre: "Télécommunication",
+                telecomDesc: "Installation réseaux, câblage, téléphonie IP, solutions de communication unifiée.",
+                adresse: "ADDRESS",
+                horaires: "HEURES DE TRAVAIL",
+                semaine: "De 8h00 à 23h11 en semaine",
+                weekend: "De 11h00 à 1h00 le week-end",
+                suivezNous: "SUIVEZ-NOUS",
+                droits: "Tous droits réservés."
+            },
+            en: {
+                title: "Evoltec",
+                accueil: "Home",
+                aPropos: "About",
+                services: "Services",
+                contact: "Contact",
+                connexion: "Login",
+                bienvenue: "WELCOME TO",
+                slogan: "Your trusted partner in IT, telecommunications and digital transformation",
+                reserver: "BOOK A SERVICE",
+                titreApropos: "About EVOLTEC",
+                descriptionApropos: "EVOLution TEChnology (EVOLTEC) is a Moroccan company based in Marrakech, specializing in IT, telecommunications and office furniture. Since its creation in 2006, EVOLTEC has been supporting its clients in their digital transformation with recognized expertise.",
+                domaines: "Our areas of intervention:",
+                audit: "✔ Audit and diagnostics",
+                assistance: "✔ Assistance and consulting",
+                maintenance: "✔ Maintenance and repair",
+                informatique: "✔ Computerization and digitization",
+                pedagogique: "✔ Educational solutions",
+                nosServices: "Our Services",
+                informatiqueTitre: "IT Services",
+                informatiqueDesc: "IT solutions, software development, IT equipment maintenance.",
+                bureautiqueTitre: "Office Equipment",
+                bureautiqueDesc: "Sales and maintenance of office equipment, document digitization.",
+                telecomTitre: "Telecommunication",
+                telecomDesc: "Network installation, cabling, IP telephony, unified communication solutions.",
+                adresse: "ADDRESS",
+                horaires: "WORKING HOURS",
+                semaine: "From 8:00 to 23:11 on weekdays",
+                weekend: "From 11:00 to 1:00 on weekends",
+                suivezNous: "FOLLOW US",
+                droits: "All rights reserved."
+            }
+        };
+
+        let currentLang = "fr";
+
+        function toggleLanguage() {
+            currentLang = currentLang === "fr" ? "en" : "fr";
+            document.title = translations[currentLang].title;
+            
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+        }
+
+
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
