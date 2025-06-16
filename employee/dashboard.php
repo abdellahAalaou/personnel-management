@@ -249,7 +249,7 @@ body {
                         <h3 class="font-semibold">Jours de congé utilisés</h3>
                         <p><?php echo $usedVacationDays; ?>  jours</p>
                     </div>
-                        <?php echo $remainingVacationDays; ?> days</p>
+                        <!-- <?php echo $remainingVacationDays; ?> days</p> -->
                 </div>
                 <h3 class="text-lg font-semibold mt-4">Demandes de congé récentes</h3>
                 <ul class="list-disc pl-5 mt-2">

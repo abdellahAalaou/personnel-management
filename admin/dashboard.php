@@ -18,7 +18,13 @@ $absence = new Absence();
 $absences = $absence->getAll();
 
 $vacation = new Vacation();
-$vacations = $vacation->getAll()
+$vacations = $vacation->getAll();
+
+$pendingVacations = array_filter($vacations, function($v) {
+    return strtolower(trim($v['ETAT'])) === 'en attente';
+});
+
+
 
 ?>
 
@@ -65,7 +71,7 @@ $vacations = $vacation->getAll()
                 </div>
                 <div class="stat-card">
                     <h3>CONGE EN ATTENTE</h3>
-                    <p><?php echo count($vacations); ?></p>
+                    <p><?php echo count($pendingVacations); ?></p>
                 </div>
                 <div class="stat-card">
                     <h3>ABSENCE RECENTES</h3>

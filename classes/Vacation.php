@@ -18,9 +18,9 @@ class Vacation {
 
     public function create($data) {
         $query = "INSERT INTO " . $this->table_name . "
-                (ID_EMP, DATE_DEBUT_CGE, DATE_FIN_CGE)
-                VALUES
-                (:id_emp, :date_debut, :date_fin)";
+        (ID_EMP, DATE_DEBUT_CGE, DATE_FIN_CGE, ETAT)
+        VALUES
+        (:id_emp, :date_debut, :date_fin, 'en attente')";
 
         $stmt = $this->conn->prepare($query);
 
@@ -115,7 +115,8 @@ class Vacation {
         return $stmt->execute();
     }
     public function getPending() {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE ETAT = 'pending'";
+            $query = "SELECT * FROM " . $this->table_name . " WHERE ETAT = 'en attente'";
+        
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

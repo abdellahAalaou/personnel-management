@@ -94,7 +94,8 @@ class Employee {
                     DATEEMBAUCH_EMP = :date_embauche,
                     NOMBRE_D_ENFANT = :nbr_enfants,
                     NOM_UTILISATEUR = :username,
-                    NOMBRE_JOURS_CONGE = :jours_conge
+                    ROLES = :role
+                    
                 WHERE ID_EMP = :id";
     
         $stmt = $this->conn->prepare($query);
@@ -109,9 +110,8 @@ class Employee {
         $stmt->bindParam(":date_embauche", $data['date_embauche']);
         $stmt->bindParam(":nbr_enfants", $data['nbr_enfants']);
         $stmt->bindParam(":username", $data['username']);
-        $stmt->bindParam(":jours_conge", $data['jours_conge']); 
         $stmt->bindParam(":id", $data['id']);
-    
+        $stmt->bindParam(":role", $data['role']);
         return $stmt->execute();
     }
 

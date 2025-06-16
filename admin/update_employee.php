@@ -22,8 +22,6 @@ try {
         header('Location: employees.php');
         exit();
     }
-
- 
     $services_query = "SELECT N__SERVICE, NOM_SERVICE FROM service";
     $services_stmt = $db->prepare($services_query);
     $services_stmt->execute();

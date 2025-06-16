@@ -18,7 +18,15 @@ $requests = $vacation->getAll();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $request_id = $_POST['request_id'];
-    $status = $_POST['status'];  
+    
+if ($_POST['status'] === 'accepted') {
+    $status = 'acceptée';
+} elseif ($_POST['status'] === 'rejected') {
+    $status = 'refusée';
+} else {
+    $status = $_POST['status'];
+}
+
 
     $vac = $vacation->read($request_id);
     $previousStatus = strtolower($vac['ETAT'] ?? '');
@@ -119,29 +127,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <td><?php echo $request['NOM_EMP'] . ' ' . $request['PRENOM_EMP']; ?></td>
                             <td><?php echo $request['DATE_DEBUT_CGE']; ?></td>
                             <td><?php echo $request['DATE_FIN_CGE']; ?></td>
-                            <td><?php echo ucfirst($request['ETAT']); ?></td>
+                            <td><?php
+                                        $etat = strtolower($request['ETAT']);
+                                        if ($etat === 'accepted') {
+                                            echo 'Acceptée';
+                                        } elseif ($etat === 'rejected') {
+                                            echo 'Refusée';
+                                        } else {
+                                            echo ucfirst($etat); 
+                                        }
+                                    ?>
+                                </td>
                             <td>
 
                            <form method="POST">
     <input type="hidden" name="request_id" value="<?php echo $request['N__CGE']; ?>">
     
     <button type="submit" 
-        name="status" 
-        value="accepted" 
-        class="btn-accept"
-        <?php echo strtolower($request['ETAT']) === 'accepted' ? 'disabled' : ''; ?>
-        onclick="return confirm('Accepter cette demande de congé ?');">
-    Accepte
+    name="status" 
+    value="accepted" 
+    class="btn-accept"
+    <?php echo in_array(strtolower(trim($request['ETAT'])), ['acceptée', 'refusée']) ? 'disabled' : ''; ?>
+    onclick="return confirm('Accepter cette demande de congé ?');">
+Accepte
 </button>
 
 <button type="submit" 
-        name="status" 
-        value="rejected"  
-        class="btn-reject"
-        <?php echo strtolower($request['ETAT']) === 'accepted' ? 'disabled' : ''; ?>
-        onclick="return confirm('Refuser cette demande de congé ?');">
-    Refuse
+    name="status" 
+    value="rejected"  
+    class="btn-reject"
+    <?php echo in_array(strtolower(trim($request['ETAT'])), ['acceptée', 'refusée']) ? 'disabled' : ''; ?>
+
+    onclick="return confirm('Refuser cette demande de congé ?');">
+Refuse
 </button>
+
 
 </form>
 

@@ -187,7 +187,6 @@ $remaining_days = getRemainingVacationDays($employee, $vacation, $_SESSION['user
             background-color: #2980b9;
         } */
          /* <style> */
-    /* Style spécifique pour le formulaire de demande de congé */
     .main-content form {
         max-width: 500px;
         margin: 20px 0;
@@ -239,12 +238,12 @@ $remaining_days = getRemainingVacationDays($employee, $vacation, $_SESSION['user
         background-color: #1e4e8c;
     }
 
-    /* Animation lors du clic */
+ 
     .main-content form button:active {
         transform: translateY(1px);
     }
 
-    /* Style pour les messages */
+    
     .message {
         padding: 15px;
         margin: 20px 0;

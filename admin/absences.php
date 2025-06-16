@@ -377,6 +377,9 @@ $allEmployees = $user->getAll();
     .alert-info {
         background-color: #17a2b8;
     }
+    .all{
+        width:100% ;
+    }
 </style>
 
 </styl>
