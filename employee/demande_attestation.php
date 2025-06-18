@@ -34,9 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/empstyle.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/empstyle.css">
+
 </head>
 <body>
     <div class="sidebar">
@@ -68,7 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+        .sidebar{
+            min-width:280px ;
 
+
+        }
         body {
             font-family: "Cairo", sans-serif;
         }

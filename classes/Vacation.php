@@ -107,13 +107,71 @@ class Vacation {
         $stmt->execute();
         return $stmt->rowCount() > 0;
     }
+
     public function updateStatus($id, $status) {
+        // Start a transaction to keep things safe
+        $this->conn->beginTransaction();
+    
+        // Update the vacation request status
         $query = "UPDATE " . $this->table_name . " SET ETAT = :status WHERE N__CGE = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':status', $status);
         $stmt->bindParam(':id', $id);
-        return $stmt->execute();
+    
+        if (!$stmt->execute()) {
+            $this->conn->rollBack();
+            return false;
+        }
+    
+        // If status is 'acceptée', deduct vacation days from employee
+        if ($status === 'acceptée') {
+            // Get the vacation record info to calculate days and employee ID
+            $vacation = $this->read($id);
+            if (!$vacation) {
+                $this->conn->rollBack();
+                return false;
+            }
+    
+            // Deduct vacation days
+            $success = $this->deductVacationDays($vacation['ID_EMP'], $vacation['DATE_DEBUT_CGE'], $vacation['DATE_FIN_CGE']);
+    
+            if (!$success) {
+                $this->conn->rollBack();
+                return false;
+            }
+        }
+    
+        // Commit the transaction if all went well
+        $this->conn->commit();
+        return true;
     }
+    
+    // Add this private helper method to your class:
+    private function deductVacationDays($id_emp, $start_date, $end_date) {
+        // Calculate number of vacation days
+        $start = strtotime($start_date);
+        $end = strtotime($end_date);
+        $days = floor(($end - $start) / (60 * 60 * 24)) + 1;
+    
+        // Get current remaining vacation days
+        $query = "SELECT NOMBRE_JOURS_CONGE FROM employee WHERE ID_EMP = :id_emp";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id_emp', $id_emp);
+        $stmt->execute();
+        $currentDays = $stmt->fetchColumn();
+    
+        // Calculate new remaining days (no negative)
+        $newDays = max(0, $currentDays - $days);
+    
+        // Update employee table with new remaining days
+        $updateQuery = "UPDATE employee SET NOMBRE_JOURS_CONGE = :newDays WHERE ID_EMP = :id_emp";
+        $stmtUpdate = $this->conn->prepare($updateQuery);
+        $stmtUpdate->bindParam(':newDays', $newDays);
+        $stmtUpdate->bindParam(':id_emp', $id_emp);
+    
+        return $stmtUpdate->execute();
+    }
+    
     public function getPending() {
             $query = "SELECT * FROM " . $this->table_name . " WHERE ETAT = 'en attente'";
         
@@ -122,7 +180,7 @@ class Vacation {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function getTotalUsedDays($id_emp) {
-        $query = "SELECT DATE_DEBUT_CGE, DATE_FIN_CGE FROM conge WHERE ID_EMP = :id AND ETAT = 'approved'";
+        $query = "SELECT DATE_DEBUT_CGE, DATE_FIN_CGE FROM conge WHERE ID_EMP = :id AND ETAT = 'acceptée'";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':id', $id_emp);
         $stmt->execute();
@@ -137,5 +195,9 @@ class Vacation {
         }
         return $total_days;
     }
+
+
+ 
     
-} 
+    
+}

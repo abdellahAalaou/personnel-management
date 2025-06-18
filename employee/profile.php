@@ -66,6 +66,7 @@ try {
             position: fixed;
             height: 100vh;
             overflow-y: auto;
+            
         }
         .sidebar ul {
             padding: 0;

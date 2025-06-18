@@ -143,6 +143,8 @@ $remaining_days = getRemainingVacationDays($employee, $vacation, $_SESSION['user
         .sidebar{
             margin: 0;
             padding: 0;
+            min-width:280px ;
+
         }
         /* .main-content {
             margin-left: 280px;
@@ -187,105 +189,68 @@ $remaining_days = getRemainingVacationDays($employee, $vacation, $_SESSION['user
             background-color: #2980b9;
         } */
          /* <style> */
-    .main-content form {
-        max-width: 500px;
-        margin: 20px 0;
-        padding: 25px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+        .main-content form {
+            max-width: 500px;
+            margin: 20px 0;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .main-content form label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: #2b6cb0;
-    }
+        .main-content form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2b6cb0;
+        }
 
-    .main-content input[type="date"] {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 20px;
-        border: 2px solid #e2e8f0;
-        border-radius: 6px;
-        font-size: 16px;
-        transition: all 0.3s ease;
-        box-sizing: border-box;
-        font-family: "Cairo", sans-serif;
-    }
+        .main-content input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            font-family: "Cairo", sans-serif;
+        }
 
-    .main-content input[type="date"]:focus {
-        border-color: #2b6cb0;
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
-    }
+        .main-content input[type="date"]:focus {
+            border-color: #2b6cb0;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+        }
 
-    .main-content form button {
-        width: 100%;
-        padding: 12px;
-        background-color: #2b6cb0;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+        .main-content form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2b6cb0;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-    .main-content form button:hover {
-        background-color: #1e4e8c;
-    }
-
- 
-    .main-content form button:active {
-        transform: translateY(1px);
-    }
+        .main-content form button:hover {
+            background-color: #1e4e8c;
+        }
 
     
-    .message {
-        padding: 15px;
-        margin: 20px 0;
-        border-radius: 4px;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .success {
-        background-color: #d4edda;
-        color: #155724;
-        border: 1px solid #c3e6cb;
-    }
-
-    .error {
-        background-color: #f8d7da;
-        color: #721c24;
-        border: 1px solid #f5c6cb;
-    }
-
-     table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            margin-top: 20px;
+        .main-content form button:active {
+            transform: translateY(1px);
         }
 
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-
-        table th {
-            background-color: #2980b9;
-            color: white;
-        }
-
+        
         .message {
-            padding: 12px;
-            margin: 15px 0;
+            padding: 15px;
+            margin: 20px 0;
             border-radius: 4px;
+            text-align: center;
             font-weight: bold;
         }
 
@@ -300,6 +265,43 @@ $remaining_days = getRemainingVacationDays($employee, $vacation, $_SESSION['user
             color: #721c24;
             border: 1px solid #f5c6cb;
         }
+
+        table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: white;
+                margin-top: 20px;
+            }
+
+            table th, table td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+
+            table th {
+                background-color: #2980b9;
+                color: white;
+            }
+
+            .message {
+                padding: 12px;
+                margin: 15px 0;
+                border-radius: 4px;
+                font-weight: bold;
+            }
+
+            .success {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+            }
+
+            .error {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+            }
 </style>
 
        

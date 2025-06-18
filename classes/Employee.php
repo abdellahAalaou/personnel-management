@@ -195,5 +195,13 @@ class Employee {
         return null;
     }
     }
+    public function updateVacationDays($employeeId, $newDays) {
+        $query = "UPDATE employee SET NOMBRE_JOURS_CONGE = :newDays WHERE ID_EMP = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':newDays', $newDays, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $employeeId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+    
 
 }
